@@ -7,7 +7,7 @@
   padding: 0 1rem;
   background-color: rgba(17, 17, 17, 0.8);
   border-bottom: 1px solid #242424;
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   z-index: 1;
@@ -76,7 +76,7 @@
 /* h1 style */
 .h1 {
   color: whitesmoke;
-  font-size: 3rem;
+  font-size: 3.5rem;
   cursor: cell;
 }
 
@@ -84,6 +84,7 @@
   transition: color 3s;
   transition-delay: 4s;
   letter-spacing: -0.2vw;
+  margin-right: 2px;
 }
 
 .h1 span:hover {
@@ -100,6 +101,10 @@
 
 .h1 span:nth-child(3n):hover {
   color: var(--main-blue);
+}
+
+.h1 span:nth-child(4n):hover {
+  color: var(--main-orange);
 }
 /* intro */
 .intro {
@@ -177,7 +182,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  border: 1px solid #2e2e2e;
+  border: 1px solid var(--background-hover);
   padding: 2rem;
   margin-top: 20px;
   background: var(--btn-bg);
@@ -195,7 +200,7 @@
 
 /* about */
 
-.flex {
+.flex_space_between {
   display: flex;
   justify-content: space-between;
 }
@@ -259,11 +264,21 @@
   margin-bottom: 0.6rem;
 }
 
+.lang {
+  background: var(--background-hover);
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
 @keyframes colors {
   0% {
     border-top: 3px solid var(--main-purple);
   }
-  50% {
+  25% {
+    border-top: 3px solid var(--main-orange);
+  }
+  75% {
     border-top: 3px solid var(--main-green);
   }
   100% {

@@ -34,7 +34,7 @@ export default function Home() {
       <Navbar />
       <SectionWrapper>
         <h1 className={style.h1}>
-          {"Frontend Engineer creating thoughtful, intuitive interfaces."
+          {"Frontend Engineer who writes clean, elegant and efficient code."
             .split("")
             .map((letter, id) => (
               <span key={letter + id.toString()}>{letter}</span>
@@ -90,7 +90,7 @@ export default function Home() {
             );
           })}
 
-          <li>
+          <li className={style.button}>
             <a
               href="https://mail.google.com/mail/u/0/?fs=1&to=rekhakumari44400@google.com&tf=cm"
               target="_blank"

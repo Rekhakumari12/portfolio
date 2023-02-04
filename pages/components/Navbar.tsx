@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import style from "../../styles/style.module.css";
 import { NAVBAR_DATA } from "../../constants/navbar";
+import Image from "next/image";
 export const Navbar = () => {
   const router = useRouter();
 
@@ -9,7 +10,7 @@ export const Navbar = () => {
     <>
       <div className={style.gradientBorder}></div>
       <div className={style.topbar}>
-        <a className={style.rekha} href="#" title="This is my name Rekha">
+        <a className={style.rekha} href="#" title="Rekha">
           रेखा
         </a>
         <nav className={style.navbar}>

@@ -1,15 +1,17 @@
 import React from "react";
 import { Navbar } from "./components/Navbar";
-import { MainWrapper, SectionWrapper } from "../styles/Wrapper.style";
+import { MainWrapper, SectionWrapper, Space } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
 import Image from "next/image";
+import { WorkProgress } from "./components/WorkProgress";
+import { WORK_HISTORY } from "../constants/workHistory";
 // @refresh reset
 export default function about() {
   return (
     <MainWrapper>
       <Navbar />
       <SectionWrapper>
-        <div className={style.intro}>
+        <Space my="5">
           <p>
             <Image
               src="/namaste.gif"
@@ -75,7 +77,7 @@ export default function about() {
                   <h4>Simpplr</h4>
                 </a>
                 <ul>
-                  <li className={style.flex}>
+                  <li className={style.flex_space_between}>
                     <div className={style.bullet}></div>
                     <div>
                       <span>Software Engineer </span>
@@ -101,29 +103,7 @@ export default function about() {
                 <a href="https://medly.com/en-us" className={style.href}>
                   <h4>Medly Pharmacy</h4>
                 </a>
-                <ul>
-                  <li className={style.flex}>
-                    <div className={style.vertical_line}></div>
-                    <div className={style.baseline_flex}>
-                      <div className={style.bullet}></div>
-                      <div>
-                        <span>Software Development Engineer-1</span>
-                        <p className={style.span}>Pune, Maharashtra, India</p>
-                      </div>
-                    </div>
-                    <p className={style.span}>Apr 2022 - Nov 2022</p>
-                  </li>
-                  <li className={style.flex}>
-                    <div className={style.baseline_flex}>
-                      <div className={style.bullet}></div>
-                      <div>
-                        <span>Associate Frontend Engineer</span>
-                        <p className={style.span}>Pune, Maharashtra, India</p>
-                      </div>
-                    </div>
-                    <p className={style.span}>Jul 2021 - Apr 2022</p>
-                  </li>
-                </ul>
+                <WorkProgress data={WORK_HISTORY} />
               </div>
             </div>
           </section>
@@ -147,8 +127,8 @@ export default function about() {
                   Next.js
                 </a>{" "}
                 with deployment via{" "}
-                <a href="https://www.netlify.com/" className={style.underline}>
-                  Netlify
+                <a href="https://vercel.com/" className={style.underline}>
+                  Vercel
                 </a>
               </li>
               <li>
@@ -161,9 +141,16 @@ export default function about() {
                 </a>{" "}
                 typeface
               </li>
+              <li>
+                Used{" "}
+                <a href="https://fontawesome.com/" className={style.underline}>
+                  FontAwesome
+                </a>{" "}
+                for icons
+              </li>
             </ul>
           </section>
-        </div>
+        </Space>
       </SectionWrapper>
     </MainWrapper>
   );
