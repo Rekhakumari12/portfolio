@@ -13,7 +13,7 @@ import { projectData } from "../constants/projectdata";
 export default function Projects() {
   const inputRef = useRef<HTMLSelectElement>(null);
   const [inputValue, setInputValue] = useState<string>("all");
-  const [filteredProject, setFilteredData] = useState<{}[]>([]);
+  const [filteredProject, setFilteredData] = useState(projectData);
   const handleChange = () => {
     console.log(inputRef.current?.value, "inputRef");
     if (inputRef.current?.value) {
@@ -81,9 +81,10 @@ export default function Projects() {
             experiences.
           </p>
           <Divider my="3" />
-          {filteredProject.map((data) => (
-            <ProjectCard data={data} key={data.title} />
-          ))}
+          {filteredProject &&
+            filteredProject.map((data, i) => (
+              <ProjectCard data={data} key={i} />
+            ))}
         </Space>
       </SectionWrapper>
     </MainWrapper>
