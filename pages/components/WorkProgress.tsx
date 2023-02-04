@@ -8,7 +8,11 @@ type Props = {
   id: number;
 };
 
-export const WorkProgress = ({ data }: Array<Props>): JSX.Element => {
+type arrayProps = {
+  data: Props[];
+};
+
+export const WorkProgress = ({ data }: arrayProps): JSX.Element => {
   return (
     <ul>
       {data.map((w: Props) => {
