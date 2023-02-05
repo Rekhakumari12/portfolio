@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Navbar } from "./components/Navbar";
 import {
   Divider,
   FAQWrapper,
@@ -9,9 +8,9 @@ import {
 import style from "../styles/style.module.css";
 import FaqCategories from "./components/FaqCategories";
 import Image from "next/image";
-import { Accordion } from "./components/Accordian";
 import { Education_Faq, General_Faq, Skill_Faq } from "../constants/faq";
-Accordion;
+import Navbar from "./components/Navbar";
+import Accordion from "./components/Accordian";
 type props = {
   skill: boolean;
   education: boolean;

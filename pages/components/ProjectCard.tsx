@@ -4,7 +4,6 @@ import style from "../../styles/style.module.css";
 import Image from "next/image";
 import { ProjectCard as ProjectCardWrapper } from "../../styles/Wrapper.style";
 import Tilt from "react-parallax-tilt";
-// import ParallaxEffectGlareScale from 'react-parallax-tilt'
 
 type Props = {
   title: string;
@@ -19,7 +18,7 @@ type DataProps = {
   data: Props;
 };
 
-export const ProjectCard = ({ data }: DataProps) => {
+export default function ProjectCard({ data }: DataProps) {
   const { title, desc, repolink, livelink, langObj, shadowColor } = data;
   return (
     <>
@@ -81,4 +80,4 @@ export const ProjectCard = ({ data }: DataProps) => {
       <br />
     </>
   );
-};
+}

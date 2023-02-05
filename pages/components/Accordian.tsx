@@ -4,7 +4,7 @@ type props = {
   children: string;
   links?: { name: string; url: string }[];
 };
-export const Accordion = ({ title, children, links }: props) => {
+export default function Accordion({ title, children, links }: props) {
   const [open, setOpen] = useState(false);
   return (
     <div className="box">
@@ -25,4 +25,4 @@ export const Accordion = ({ title, children, links }: props) => {
       </div>
     </div>
   );
-};
+}

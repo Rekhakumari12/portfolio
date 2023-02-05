@@ -2,8 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import style from "../../styles/style.module.css";
 import { NAVBAR_DATA } from "../../constants/navbar";
-import Image from "next/image";
-export const Navbar = () => {
+export default function Navbar() {
   const router = useRouter();
 
   return (
@@ -31,4 +30,4 @@ export const Navbar = () => {
       </div>
     </>
   );
-};
+}

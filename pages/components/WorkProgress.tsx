@@ -12,12 +12,12 @@ type arrayProps = {
   data: Props[];
 };
 
-export const WorkProgress = ({ data }: arrayProps): JSX.Element => {
+export default function WorkProgress({ data }: arrayProps): JSX.Element {
   return (
     <ul>
       {data.map((w: Props) => {
         return (
-          <li className={style.flex} key={w.role}>
+          <li className={style.flex_space_between} key={w.role}>
             {w.id !== data.length && (
               <div className={style.vertical_line}></div>
             )}
@@ -34,4 +34,4 @@ export const WorkProgress = ({ data }: arrayProps): JSX.Element => {
       })}
     </ul>
   );
-};
+}

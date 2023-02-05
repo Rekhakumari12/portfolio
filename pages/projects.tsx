@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Navbar } from "./components/Navbar";
 import {
   Divider,
   MainWrapper,
@@ -7,10 +6,11 @@ import {
   Space,
 } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
-import { ProjectCard } from "./components/ProjectCard";
 import Image from "next/image";
 import { projectData } from "../constants/projectdata";
 import { Options } from "../constants/lang";
+import Navbar from "./components/Navbar";
+import ProjectCard from "./components/ProjectCard";
 export default function Projects() {
   const inputRef = useRef<HTMLSelectElement>(null);
   const [inputValue, setInputValue] = useState<string>("all");

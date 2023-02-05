@@ -1,10 +1,10 @@
 import React from "react";
-import { Navbar } from "./components/Navbar";
 import { MainWrapper, SectionWrapper, Space } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
 import Image from "next/image";
-import { WorkProgress } from "./components/WorkProgress";
 import { WORK_HISTORY } from "../constants/workHistory";
+import Navbar from "./components/Navbar";
+import WorkProgress from "./components/WorkProgress";
 // @refresh reset
 export default function about() {
   return (
@@ -115,27 +115,41 @@ export default function about() {
               <li>
                 Built on a Mac using{" "}
                 <a
+                  target="_blank"
                   href="https://code.visualstudio.com/"
                   className={style.underline}
+                  rel="noreferrer"
                 >
                   Visual Studio Code
                 </a>
               </li>
               <li>
                 Written in{" "}
-                <a href="https://nextjs.org/" className={style.underline}>
+                <a
+                  target="_blank"
+                  href="https://nextjs.org/"
+                  className={style.underline}
+                  rel="noreferrer"
+                >
                   Next.js
                 </a>{" "}
                 with deployment via{" "}
-                <a href="https://vercel.com/" className={style.underline}>
+                <a
+                  target="_blank"
+                  href="https://vercel.com/"
+                  className={style.underline}
+                  rel="noreferrer"
+                >
                   Vercel
                 </a>
               </li>
               <li>
                 Set in the beautiful{" "}
                 <a
+                  target="_blank"
                   href="https://fonts.google.com/noto/specimen/Noto+Sans+Mono?category=Monospace"
                   className={style.underline}
+                  rel="noreferrer"
                 >
                   Noto Sans Mono
                 </a>{" "}
@@ -143,7 +157,12 @@ export default function about() {
               </li>
               <li>
                 Used{" "}
-                <a href="https://fontawesome.com/" className={style.underline}>
+                <a
+                  target="_blank"
+                  href="https://fontawesome.com/"
+                  className={style.underline}
+                  rel="noreferrer"
+                >
                   FontAwesome
                 </a>{" "}
                 for icons
