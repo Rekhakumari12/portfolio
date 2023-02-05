@@ -4,11 +4,16 @@ import style from "../../styles/style.module.css";
 
 type props = {
   handleClick: Function;
+  active: "skill" | "general" | "education";
 };
-export default function FaqCategories({ handleClick }: props) {
+export default function FaqCategories({ handleClick, active }: props) {
   return (
     <div className={style.flex_space_between}>
-      <Button padding="2rem" onClick={() => handleClick("skill")}>
+      <Button
+        padding="2rem"
+        onClick={() => handleClick("skill")}
+        className={`smallcard ${active === "skill" && "active"}`}
+      >
         <Image
           src="/skills.svg"
           alt="skills Logo"
@@ -18,7 +23,11 @@ export default function FaqCategories({ handleClick }: props) {
         />
         <p>Skills</p>
       </Button>
-      <Button padding="2rem" onClick={() => handleClick("education")}>
+      <Button
+        padding="2rem"
+        onClick={() => handleClick("education")}
+        className={`smallcard ${active === "education" && "active"}`}
+      >
         <Image
           src="/education.svg"
           alt="education Logo"
@@ -28,7 +37,11 @@ export default function FaqCategories({ handleClick }: props) {
         />
         <p>Education</p>
       </Button>
-      <Button padding="2rem" onClick={() => handleClick("general")}>
+      <Button
+        padding="2rem"
+        onClick={() => handleClick("general")}
+        className={`smallcard ${active === "general" && "active"}`}
+      >
         <Image
           src="/keyboard.svg"
           alt="keyboard Logo"

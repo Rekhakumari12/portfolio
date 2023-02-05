@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Navbar } from "./components/Navbar";
 import {
   Divider,
@@ -10,6 +10,7 @@ import style from "../styles/style.module.css";
 import { ProjectCard } from "./components/ProjectCard";
 import Image from "next/image";
 import { projectData } from "../constants/projectdata";
+import { Options } from "../constants/lang";
 export default function Projects() {
   const inputRef = useRef<HTMLSelectElement>(null);
   const [inputValue, setInputValue] = useState<string>("all");
@@ -34,15 +35,6 @@ export default function Projects() {
       : setFilteredData(filtered);
   }, [inputValue]);
 
-  const Options = [
-    "javascript",
-    "typescript",
-    "html",
-    "css",
-    "tailwind",
-    "material ui",
-    "react",
-  ];
   return (
     <MainWrapper>
       <Navbar />
@@ -81,10 +73,9 @@ export default function Projects() {
             experiences.
           </p>
           <Divider my="3" />
-          {filteredProject &&
-            filteredProject.map((data, i) => (
-              <ProjectCard data={data} key={i} />
-            ))}
+          {filteredProject.map((data, i) => (
+            <ProjectCard data={data} key={i} />
+          ))}
         </Space>
       </SectionWrapper>
     </MainWrapper>

@@ -86,9 +86,69 @@ export const Button = styled.button<ButtonPropsTypes>`
   padding: ${(props) => props.padding || "0.5rem 1rem"};
   background: var(--btn-bg);
   font-family: var(--font-noto);
+  &.smallcard {
+    display: block;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    background: var(--btn-bg);
+    border: 2px solid transparent;
+  }
+  &.smallcard:hover {
+    background: var(--btn-hover-bg);
+  }
+  &.active {
+    border: 2px solid var(--background-hover);
+  }
 `;
 export const Divider = styled.hr<Props>`
   margin: ${(props) => props.my + "rem 0" || "1rem 0"};
   background: var(--background-hover);
   border: 1px solid var(--background-hover);
+`;
+
+export const FAQWrapper = styled.div`
+  button {
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: start;
+    border: none;
+    border-bottom: 2px solid var(--background-hover);
+    font-family: var(--font-noto);
+    cursor: pointer;
+    outline: none;
+  }
+  .content {
+    max-height:9999px
+    transition: all 0.6s ease-out
+    height: auto;
+    text-align:justify;
+  }
+  .content.collapsed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out;
+  }
+  p {
+    padding: 1rem 0;
+    font-size: small;
+    opacity: 0.7;
+  }
+  
+  /* icon style */
+  button::after {
+    content: url("plus.svg");
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    width: 12px;
+    height: 12px;
+    transition: all 0.3s ease;
+  }
+  .open::after {
+    content: url("plus.svg");
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
 `;
