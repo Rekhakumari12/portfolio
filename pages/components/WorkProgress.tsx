@@ -15,23 +15,24 @@ type arrayProps = {
 export default function WorkProgress({ data }: arrayProps): JSX.Element {
   return (
     <ul>
-      {data.map((w: Props) => {
-        return (
-          <li className={style.flex_space_between} key={w.role}>
-            {w.id !== data.length && (
-              <div className={style.vertical_line}></div>
-            )}
-            <div className={style.baseline_flex}>
-              <div className={style.bullet}></div>
-              <div>
-                <span>{w.role}</span>
-                <p className={style.span}>{w.location}</p>
+      {data &&
+        data.map((w: Props) => {
+          return (
+            <li className={style.flex_space_between} key={w.role}>
+              {w.id !== data.length && (
+                <div className={style.vertical_line}></div>
+              )}
+              <div className={style.baseline_flex}>
+                <div className={style.bullet}></div>
+                <div>
+                  <span>{w.role}</span>
+                  <p className={style.span}>{w.location}</p>
+                </div>
               </div>
-            </div>
-            <p className={style.span}>{w.tenure}</p>
-          </li>
-        );
-      })}
+              <p className={style.span}>{w.tenure}</p>
+            </li>
+          );
+        })}
     </ul>
   );
 }

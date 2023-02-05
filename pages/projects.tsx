@@ -73,9 +73,10 @@ export default function Projects() {
             experiences.
           </p>
           <Divider my="3" />
-          {filteredProject.map((data, i) => (
-            <ProjectCard data={data} key={i} />
-          ))}
+          {filteredProject &&
+            filteredProject.map((data, i) => (
+              <ProjectCard data={data} key={i} />
+            ))}
         </Space>
       </SectionWrapper>
     </MainWrapper>
