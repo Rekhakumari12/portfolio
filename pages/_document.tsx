@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { PageUnderConstruction } from "./components/PageUnderConstruction";
+import PageUnderConstruction from "./components/PageUnderConstruction";
 
 export default function Document() {
   return (

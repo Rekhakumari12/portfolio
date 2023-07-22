@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Home from "./home";
-import { PageUnderConstruction } from "./components/PageUnderConstruction";
 
 const inter = Inter({ subsets: ["latin"] });
 
