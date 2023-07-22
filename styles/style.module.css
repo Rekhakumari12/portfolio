@@ -1,3 +1,16 @@
+.fontLato {
+  font-family: var(--font-lato);
+}
+.fontNato {
+  font-family: var(--font-nato);
+}
+.font2rem {
+  font-size: 2rem;
+}
+.fontSize {
+  font-size: 1.2rem;
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -109,7 +122,8 @@
 /* intro */
 .intro {
   margin: 5rem 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-family: var(--font-noto);
 }
 .intro p {
   margin-bottom: 2rem;
@@ -175,7 +189,6 @@
 /* featured project */
 .featured_projects h2 {
   font-size: 2rem;
-  color: whitesmoke;
   margin-bottom: 1rem;
 }
 .tile {
@@ -196,6 +209,10 @@
 .tile:last-child:hover {
   background: var(--btn-hover-bg);
   border: 1px solid var(--main-blue);
+}
+.featured_projects_tiles {
+  font-size: 1rem;
+  font-family: var(--font-nato);
 }
 
 /* about */
@@ -255,6 +272,8 @@
   top: 7px;
 }
 .about_site {
+  font-family: var(--font-nato);
+  font-size: 1rem;
   margin: 1rem 0;
 }
 .about_site ul {
@@ -269,6 +288,29 @@
   padding: 0.2rem 0.4rem;
   font-size: 0.8rem;
   margin-left: 10px;
+}
+/* Project styles */
+.projectInfo {
+  font-family: var(--font-nato);
+  font-size: 1.2rem;
+}
+
+.underConstruction {
+  background-color: #fde802;
+  color: black;
+  position: fixed;
+  font-family: none;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 7px 36px;
+  border: 3px solid black;
+  transform: rotate(321deg);
+  z-index: 3;
+  top: 4rem;
+  left: -6rem;
+  width: 25rem;
+  height: 3rem;
+  text-align: center;
 }
 
 @keyframes colors {

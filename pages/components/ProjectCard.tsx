@@ -8,8 +8,8 @@ import Tilt from "react-parallax-tilt";
 type Props = {
   title: string;
   desc: string;
-  repolink: { name: string; url: string };
-  livelink: { name: string; url: string };
+  repoLink: { name: string; url: string };
+  liveLink: { name: string; url: string };
   langObj: string[];
   shadowColor: string;
 };
@@ -19,12 +19,21 @@ type DataProps = {
 };
 
 export default function ProjectCard({ data }: DataProps) {
-  const { title, desc, repolink, livelink, langObj, shadowColor } = data;
+  const {
+    title = "test",
+    desc,
+    repoLink,
+    liveLink,
+    langObj,
+    shadowColor,
+  } = data;
   return (
     <>
       <ProjectCardWrapper shadowColor={shadowColor}>
-        <div id="title">{title}</div>
-        <p id="desc" dangerouslySetInnerHTML={{ __html: desc }} />
+        <div className={style.projectInfo}>
+          <div id="title">{title}</div>
+          <p id="desc" dangerouslySetInnerHTML={{ __html: desc }} />
+        </div>
         <br />
         <div className={style.flex_item_center}>
           <Tilt
@@ -41,8 +50,8 @@ export default function ProjectCard({ data }: DataProps) {
                 height={20}
                 priority
               />
-              <a href={repolink.url} className={style.href}>
-                {repolink.name}
+              <a href={repoLink.url} className={style.href}>
+                {repoLink.name}
               </a>
             </Button>
           </Tilt>
@@ -60,8 +69,8 @@ export default function ProjectCard({ data }: DataProps) {
                 height={20}
                 priority
               />
-              <a href={livelink.url} className={style.href}>
-                {livelink.name}
+              <a href={liveLink.url} className={style.href}>
+                {liveLink.name}
               </a>
             </Button>
           </Tilt>

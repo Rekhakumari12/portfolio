@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { MainWrapper, SectionWrapper } from "../styles/Wrapper.style";
 import Navbar from "./components/Navbar";
+import { PageUnderConstruction } from "./components/PageUnderConstruction";
 // @refresh reset
 export default function Home() {
   const router = useRouter();
@@ -42,9 +43,9 @@ export default function Home() {
         </h1>
         <div className={style.intro}>
           <p>
-            I&apos;m Rekha Kumari, Frontend Engineer, Web Developer living in
-            Punjab, India. I graduated with Computer Application in 2020,
-            currently working with awesome folks at{" "}
+            I&apos;m Rekha Kumari, Frontend Engineer living in Punjab, India. I
+            graduated with Computer Application in 2020, currently working with
+            awesome folks at{" "}
             <a href="https://www.simpplr.com/" className={style.underline}>
               Simpplr
             </a>
@@ -60,7 +61,7 @@ export default function Home() {
             </a>
             . Working with individuals that enjoy similar things excites me.
           </p>
-          <p>
+          {/* <p>
             Aside from them, I&apos;m an inquisitive person. I like discovering
             new things every day. I adore travelling to new locations.
             Photographing, trekking, watching sci-fi shows & movies,{" "}
@@ -71,7 +72,7 @@ export default function Home() {
               listening to music
             </a>{" "}
             and audiobooks are some of my other hobbies.
-          </p>
+          </p> */}
         </div>
         <ul className={style.social_media_links}>
           {SocialMedia.map((sm) => {
@@ -103,8 +104,10 @@ export default function Home() {
         <hr className={style.divider} />
         <section className={style.featured_projects}>
           <h2>Featured projects</h2>
-          <p>A collection of some side projects that have shipped recently.</p>
           <div className={style.featured_projects_tiles}>
+            <p>
+              A collection of some side projects that have shipped recently.
+            </p>
             <a href="#" className={style.tile}>
               <div>
                 <Image

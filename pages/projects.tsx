@@ -15,14 +15,6 @@ export default function Projects() {
   const inputRef = useRef<HTMLSelectElement>(null);
   const [inputValue, setInputValue] = useState<string>("all");
   const [filteredProject, setFilteredData] = useState(projectData);
-  const handleChange = () => {
-    console.log(inputRef.current?.value, "inputRef");
-    if (inputRef.current?.value) {
-      setInputValue(inputRef.current.value);
-    } else {
-      setInputValue("all");
-    }
-  };
 
   useEffect(() => {
     const filtered = projectData.filter((project) => {
@@ -35,12 +27,21 @@ export default function Projects() {
       : setFilteredData(filtered);
   }, [inputValue]);
 
+  const handleChange = () => {
+    if (inputRef.current?.value) {
+      setInputValue(inputRef.current.value);
+    } else {
+      setInputValue("all");
+    }
+  };
+
   return (
     <MainWrapper>
       <Navbar />
       <SectionWrapper>
         <div id="projecttitle">
           <h1 className={style.h1}>
+            🎯{" "}
             {"Projects".split("").map((letter, id) => (
               <span key={letter + id.toString()}>{letter}</span>
             ))}
@@ -68,15 +69,14 @@ export default function Projects() {
         </div>
 
         <Space my="1">
-          <p>
+          <p className={`${style.fontNato} ${style.fontHalfRem}`}>
             Here&apos;s a small selection of some of my recent projects and
             experiences.
           </p>
           <Divider my="3" />
-          {filteredProject &&
-            filteredProject.map((data, i) => (
-              <ProjectCard data={data} key={i} />
-            ))}
+          {filteredProject?.map((data, i) => (
+            <ProjectCard data={data as any} key={i} />
+          ))}
         </Space>
       </SectionWrapper>
     </MainWrapper>
