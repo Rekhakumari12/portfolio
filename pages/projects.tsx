@@ -9,8 +9,8 @@ import style from "../styles/style.module.css";
 import Image from "next/image";
 import { projectData } from "../constants/projectdata";
 import { Options } from "../constants/lang";
-import Navbar from "./components/Navbar";
-import ProjectCard from "./components/ProjectCard";
+import Navbar from "../components/Navbar";
+import ProjectCard from "../components/ProjectCard";
 export default function Projects() {
   const inputRef = useRef<HTMLSelectElement>(null);
   const [inputValue, setInputValue] = useState<string>("all");
@@ -75,7 +75,7 @@ export default function Projects() {
           </p>
           <Divider my="3" />
           {filteredProject?.map((data, i) => (
-            <ProjectCard data={data as any} key={i} />
+            <ProjectCard data={data} key={i} />
           ))}
         </Space>
       </SectionWrapper>

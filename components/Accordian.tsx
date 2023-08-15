@@ -16,12 +16,11 @@ export default function Accordion({ title, children, links }: props) {
       </button>
       <div className={`content ${!open ? "collapsed" : ""}`}>
         <p>{children}</p>
-        {links &&
-          links.map((l) => (
-            <p key={l.name}>
-              <a href={l.name}>{l.name}</a>
-            </p>
-          ))}
+        {links?.map((l) => (
+          <p key={l.name}>
+            <a href={l.name}>{l.name}</a>
+          </p>
+        ))}
       </div>
     </div>
   );

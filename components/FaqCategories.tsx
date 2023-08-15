@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "../../styles/Wrapper.style";
-import style from "../../styles/style.module.css";
+import { Button } from "../styles/Wrapper.style";
+import style from "../styles/style.module.css";
 
 type props = {
   handleClick: Function;

@@ -3,8 +3,8 @@ import { MainWrapper, SectionWrapper, Space } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
 import Image from "next/image";
 import { WORK_HISTORY } from "../constants/workHistory";
-import Navbar from "./components/Navbar";
-import WorkProgress from "./components/WorkProgress";
+import Navbar from "../components/Navbar";
+import WorkProgress from "../components/WorkProgress";
 // @refresh reset
 export default function about() {
   return (

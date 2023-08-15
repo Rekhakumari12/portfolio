@@ -6,11 +6,11 @@ import {
   SectionWrapper,
 } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
-import FaqCategories from "./components/FaqCategories";
+import FaqCategories from "../components/FaqCategories";
 import Image from "next/image";
 import { Education_Faq, General_Faq, Skill_Faq } from "../constants/faq";
-import Navbar from "./components/Navbar";
-import Accordion from "./components/Accordian";
+import Navbar from "../components/Navbar";
+import Accordion from "../components/Accordian";
 type props = {
   skill: boolean;
   education: boolean;

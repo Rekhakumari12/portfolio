@@ -1,18 +1,11 @@
-import { GoogleDocClone, Project2, TrelloClone } from "./lang";
+import { Project2, TrelloClone } from "./lang";
 
 export const projectData = [
-  // {
-  //   title: "Google Doc Clone",
-  //   desc: "💡 Utilized JavaScript to replicate the functionality of the original Google Doc and implement real-time updates for multiple users.",
-  //   repoLink: { name: "Show me Repo", url: "#" },
-  //   liveLink: { name: "Show me live", url: "#" },
-  //   langObj: GoogleDocClone,
-  //   shadowColor: "var(--main-orange)",
-  // },
   {
     title: "Trello Clone",
     // desc: `💡 Utilized React and the library <a href='https://www.npmjs.com/package/react-beautiful-dnd' target='__blanck'><u>react-beautiful-dnd</u></a> to replicate the core functionality of the original Trello, including creating cards, and lists, as well as implementing a user-friendly drag-and-drop interface.<br/><br/>
     // 💡 Incorporated local storage functionality to allow for offline access and data persistence`,
+    desc: "description go here",
     repoLink: {
       name: "Show me Repo",
       url: "https://github.com/Rekhakumari12/trello-clone",
@@ -26,8 +19,7 @@ export const projectData = [
   },
   {
     title: "Trello Clone",
-    // desc: `💡 Utilized React and the library <a href='https://www.npmjs.com/package/react-beautiful-dnd' target='__blanck'><u>react-beautiful-dnd</u></a> to replicate the core functionality of the original Trello, including creating cards, and lists, as well as implementing a user-friendly drag-and-drop interface.<br/><br/>
-    // 💡 Incorporated local storage functionality to allow for offline access and data persistence`,
+    desc: "description go here",
     repoLink: {
       name: "Show me Repo",
       url: "https://github.com/Rekhakumari12/trello-clone",
@@ -40,8 +32,8 @@ export const projectData = [
     shadowColor: "var(--main-purple)",
   },
   {
-    title: "Project-2 Doc Clone",
-    // desc: "💡 Utilized JavaScript to replicate the functionality of the original Google Doc and implement real-time updates for multiple users.",
+    title: "Google Doc Clone",
+    desc: "description go here",
     repoLink: { name: "Show me Repo", url: "#" },
     liveLink: { name: "Show me live", url: "#" },
     langObj: Project2,

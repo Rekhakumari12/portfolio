@@ -1,13 +1,16 @@
 import React from "react";
-import { Button, Divider } from "../../styles/Wrapper.style";
-import style from "../../styles/style.module.css";
+import {
+  Button,
+  Divider,
+  ProjectCard as ProjectCardWrapper,
+} from "../styles/Wrapper.style";
+import style from "../styles/style.module.css";
 import Image from "next/image";
-import { ProjectCard as ProjectCardWrapper } from "../../styles/Wrapper.style";
 import Tilt from "react-parallax-tilt";
 
 type Props = {
   title: string;
-  desc: string;
+  desc?: string;
   repoLink: { name: string; url: string };
   liveLink: { name: string; url: string };
   langObj: string[];
@@ -19,20 +22,13 @@ type DataProps = {
 };
 
 export default function ProjectCard({ data }: DataProps) {
-  const {
-    title = "test",
-    desc,
-    repoLink,
-    liveLink,
-    langObj,
-    shadowColor,
-  } = data;
+  const { title, desc, repoLink, liveLink, langObj, shadowColor } = data;
   return (
     <>
       <ProjectCardWrapper shadowColor={shadowColor}>
         <div className={style.projectInfo}>
           <div id="title">{title}</div>
-          <p id="desc" dangerouslySetInnerHTML={{ __html: desc }} />
+          {desc && <p id="desc" dangerouslySetInnerHTML={{ __html: desc }} />}
         </div>
         <br />
         <div className={style.flex_item_center}>
