@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className={style.gradientBorder}></div>
       <div className={style.topbar}>
         <a className={style.rekha} href="#" title="Rekha">
-          रेखा
+          {"<" + "Rekha" + "/>"}
         </a>
         <nav className={style.navbar}>
           {NAVBAR_DATA.map((obj) => {

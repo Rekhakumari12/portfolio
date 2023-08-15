@@ -35,21 +35,16 @@
 }
 
 .rekha {
-  font-family: var(--font-splash);
+  font-family: var(--font-handjet);
   font-size: 25px;
-  transform: rotate(343deg);
-  transition-duration: 0.4s;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+  color: #01bd00;
 }
-.rekha::after {
-  content: "/";
-  position: absolute;
-  transform: rotate(50deg);
-  top: 13px;
-  left: 12px;
-}
+
 .rekha:hover {
   transform: rotate(360deg);
-  color: var(--main-purple);
+  color: #4beaff;
 }
 
 /* links with underline */

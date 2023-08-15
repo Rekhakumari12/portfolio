@@ -13,19 +13,26 @@ export default function about() {
       <SectionWrapper>
         <Space my="5">
           <div className={`${style.fontNato} ${style.fontSize}`}>
+            <h1 className={style.h1}>
+              👋{" "}
+              {"Hello!".split("").map((letter, id) => (
+                <span key={letter + id.toString()}>{letter}</span>
+              ))}
+            </h1>
             <p>
               {/* <Image
-              src="/namaste.gif"
-              alt="namaste gif"
-              width={28}
-              height={28}
-              priority
-              className={style.namaste}
-              title="Namaste"
-            />{" "} */}
-              Namasty! My name is Rekha Kumari, a Frontend Engineer from Punjab,
-              India with 2 years of experience in designing and developing
-              visually pleasing and user-friendly websites and web applications.
+                src="/namaste.gif"
+                alt="namaste gif"
+                width={28}
+                height={28}
+                priority
+                className={style.namaste}
+                title="Namaste"
+              />{" "} */}
+              <br />
+              My name is Rekha Kumari, a Frontend Engineer from Punjab, India
+              with 2 years of experience in designing and developing visually
+              pleasing and user-friendly websites and web applications.
             </p>
             <p>
               I hold a Bachelor&apos;s degree in Computer Applications. My

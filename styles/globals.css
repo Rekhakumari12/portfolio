@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Splash&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap");
 
 :root {
   /* --max-width: 1100px; */
@@ -10,7 +10,7 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --font-noto: "Noto Sans Mono", monospace;
   --font-lato: "Lato", sans-serif;
-  --font-splash: "Splash", cursive;
+  --font-handjet: "Handjet", cursive;
   --foreground-rgb: 0, 0, 0;
   --font-color: #b4b4b4;
   --background-hover: #2e2e2e;

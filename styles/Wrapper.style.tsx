@@ -26,7 +26,7 @@ export const Space = styled.div<Props>`
 `;
 
 export const SectionWrapper = styled.section`
-  width: 800px;
+  width: 80vw;
   margin: 8rem auto;
   #projecttitle {
     display: flex;
@@ -92,6 +92,12 @@ export const Button = styled.button<ButtonPropsTypes>`
     cursor: pointer;
     background: var(--btn-bg);
     border: 2px solid transparent;
+    @media (max-width: 819px) {
+      padding: 2rem;
+    }
+    @media (max-width: 481px) {
+      padding: 1rem;
+    }
   }
   &.smallcard:hover {
     background: var(--btn-hover-bg);
