@@ -26,7 +26,7 @@ export const Space = styled.div<Props>`
 `;
 
 export const SectionWrapper = styled.section`
-  width: 80vw;
+  width: 800px;
   margin: 8rem auto;
   #projecttitle {
     display: flex;
@@ -44,6 +44,11 @@ export const SectionWrapper = styled.section`
     position: relative;
     left: 25px;
     top: 4px;
+  }
+  & {
+    @media (max-width: 900px) {
+      width: 80vw;
+    }
   }
 `;
 
