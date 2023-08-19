@@ -17,11 +17,10 @@ export default function Projects() {
   const [filteredProject, setFilteredData] = useState(projectData);
 
   useEffect(() => {
-    const filtered = projectData.filter((project) => {
-      if (project?.langObj?.includes(inputValue)) {
-        return project;
-      }
-    });
+    const filtered = projectData?.filter((project) =>
+      project && project.langObj.includes(inputValue) ? project : []
+    );
+
     inputValue === "all"
       ? setFilteredData(projectData)
       : setFilteredData(filtered);

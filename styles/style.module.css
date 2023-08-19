@@ -325,7 +325,7 @@
   top: 91px;
   white-space: nowrap;
   animation: marquee 15s linear infinite;
-  width: 100%;
+  width: 100vw;
 }
 
 @keyframes marquee {
