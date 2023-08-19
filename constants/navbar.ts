@@ -1,7 +1,7 @@
 export const NAVBAR_DATA = [
-  { goto: "/home", link: "Home" },
-  { goto: "/about", link: "About" },
-  { goto: "/projects", link: "Projects" },
-  { goto: "/faq", link: "FAQs" },
+  { link: "/home", name: "Home", icon: "🏡" },
+  { link: "/about", name: "About", icon: "👩‍💻" },
+  { link: "/projects", name: "Projects", icon: "📂" },
+  { link: "/faq", name: "FAQs", icon: "🤔" },
   //
 ];
