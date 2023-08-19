@@ -70,9 +70,4 @@ export const General_Faq = [
     ques: "What are your hobbies and interests outside of work?",
     ans: "Outside of work, I enjoy reading, and traveling. Also I write LinkedIn posts as a way to share my knowledge and connect with others in my professional network. It also helps me retain information and keeps a record of my thoughts and ideas. Writing posts on LinkedIn is a great way for me to stay organized and remember what I have learned.",
   },
-  {
-    id: "question5",
-    ques: "Why you designed your logo in hindi?",
-    ans: "😅 I used my name Rekha in Hindi as logo because it is a language that holds a special place in my heart and culture. I wanted to create a logo that would reflect my personal background and values, and using Hindi seemed like a natural choice. I believe that incorporating elements of my culture into my personal brand helps to make me stand out and provides a unique perspective in my work as a developer. Additionally, I wanted to showcase the versatility and beauty of the Hindi language, which is not often seen in the tech industry.",
-  },
 ];

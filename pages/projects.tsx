@@ -18,7 +18,7 @@ export default function Projects() {
 
   useEffect(() => {
     const filtered = projectData.filter((project) => {
-      if (project.langObj.includes(inputValue)) {
+      if (project?.langObj?.includes(inputValue)) {
         return project;
       }
     });
@@ -74,9 +74,11 @@ export default function Projects() {
             experiences.
           </p>
           <Divider my="3" />
-          {filteredProject?.map((data, i) => (
-            <ProjectCard data={data} key={i} />
-          ))}
+          {filteredProject.length
+            ? filteredProject?.map((data, i) => (
+                <ProjectCard data={data} key={i} />
+              ))
+            : "Needs to be added"}
         </Space>
       </SectionWrapper>
     </MainWrapper>

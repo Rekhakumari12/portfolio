@@ -107,7 +107,7 @@ export default function Home() {
             <p>
               A collection of some side projects that have shipped recently.
             </p>
-            <a href="#" className={style.tile}>
+            {/* <a href="#" className={style.tile}>
               <div>
                 <Image
                   src="/wordfile.svg"
@@ -138,7 +138,9 @@ export default function Home() {
                 world&apos;s best digital products. Gain insights, explore
                 trends and understand competitors and best practices.
               </p>
-            </a>
+            </a> */}
+            <br />
+            <p> Coming soon!</p>
           </div>
         </section>
       </SectionWrapper>

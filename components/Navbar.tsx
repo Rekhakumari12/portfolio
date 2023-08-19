@@ -7,18 +7,6 @@ import _debounce from "lodash/debounce";
 
 export default function Navbar() {
   const router = useRouter();
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    const handleResizeDebounced = _debounce(function handleResize() {
-      console.log("first resize");
-      setWindowWidth(window.innerWidth);
-    }, 250);
-    console.log("first");
-    window.addEventListener("resize", handleResizeDebounced);
-    handleResizeDebounced();
-    return () => window.removeEventListener("resize", handleResizeDebounced);
-  }, []);
 
   return (
     <>
@@ -30,15 +18,27 @@ export default function Navbar() {
         <nav className={style.navbar}>
           {NAVBAR_DATA.map((navItem) => {
             return (
-              <Link
-                key={navItem.name}
-                href={navItem.link}
-                className={`${style.navitem} ${
-                  router.pathname === navItem.link ? style.active : ""
-                }`}
-              >
-                {windowWidth < 600 ? navItem.icon : navItem.name}
-              </Link>
+              <>
+                <Link
+                  key={navItem.name}
+                  href={navItem.link}
+                  className={`${style.showIconMenu} ${style.navitem} ${
+                    router.pathname === navItem.link ? style.active : ""
+                  }`}
+                >
+                  {navItem.icon}
+                </Link>
+
+                <Link
+                  key={navItem.name + new Date().getMilliseconds()}
+                  href={navItem.link}
+                  className={`${style.showMenu} ${style.navitem} ${
+                    router.pathname === navItem.link ? style.active : ""
+                  }`}
+                >
+                  {navItem.name}
+                </Link>
+              </>
             );
           })}
         </nav>
