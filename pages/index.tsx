@@ -1,11 +1,17 @@
-import Head from "next/head";
-import { Inter } from "@next/font/google";
-import Home from "./home";
+import Head from 'next/head'
+import { Inter } from 'next/font/google'
+import Home from './home'
+import { useEffect, useState } from 'react'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export default function Index() {
-  return (
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+  return isClient ? (
     <>
       <Head>
         <title>Rekha Kumari - Frontend Developer</title>
@@ -15,5 +21,5 @@ export default function Index() {
       </Head>
       <Home />
     </>
-  );
+  ) : null
 }
