@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Space = styled.div`
+export const Space = styled.div<{ my?: string | number }>`
   /* my: Add margin to top and bottom */
   margin: ${(props) => props.my + 'rem 0' || ''};
   font-size: 1rem;
@@ -39,7 +39,7 @@ export const MainWrapper = styled.main`
   position: relative;
 `
 
-export const ProjectCard = styled.div`
+export const ProjectCard = styled.div<{ shadowColor?: string }>`
   /* shadowColor: Add shadow color on hover */
   border: 1px solid transparent;
   padding: 1.5rem;
@@ -67,7 +67,7 @@ export const ProjectCard = styled.div`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled.button<{ padding?: string }>`
   /* padding: Add custom padding */
   display: flex;
   gap: 0.5rem;
@@ -98,7 +98,7 @@ export const Button = styled.button`
   }
 `
 
-export const Divider = styled.hr`
+export const Divider = styled.hr<{ my?: string | number }>`
   /* my: Add margin to top and bottom */
   margin: ${(props) => props.my + 'rem 0' || '1rem 0'};
   background: var(--background-hover);
