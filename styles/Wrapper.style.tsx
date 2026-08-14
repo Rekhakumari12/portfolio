@@ -6,7 +6,7 @@ export const Space = styled.div<{ my?: string | number }>`
   font-size: 1rem;
   p {
     margin-bottom: 2rem;
-    text-align: justify;
+    text-align: left;
   }
 `
 
@@ -47,7 +47,7 @@ export const ProjectCard = styled.div<{ shadowColor?: string }>`
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
   #title {
-    font-size: 1.5rem !important;
+    font-size: clamp(1.15rem, 0.95rem + 1vw, 1.5rem) !important;
   }
   #desc {
     margin: 1rem 0;
@@ -78,23 +78,35 @@ export const Button = styled.button<{ padding?: string }>`
   font-family: var(--font-noto);
 
   &.smallcard {
-    display: block;
-    padding: 1rem 5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.75rem 1rem;
     cursor: pointer;
+    color: #b4b4b4;
     background: var(--btn-bg);
     border: 2px solid transparent;
-    @media (max-width: 819px) {
-      padding: 2rem;
-    }
+    transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     @media (max-width: 481px) {
-      padding: 1rem;
+      padding: 1.25rem 0.5rem;
+      gap: 0.6rem;
     }
+  }
+  &.smallcard svg {
+    width: 44px;
+    height: 44px;
+    fill: currentColor;
   }
   &.smallcard:hover {
     background: var(--btn-hover-bg);
+    border-color: var(--tab-accent);
+    color: var(--tab-accent);
   }
   &.active {
-    border: 2px solid var(--background-hover);
+    border: 2px solid var(--tab-accent);
+    color: var(--tab-accent);
   }
 `
 
@@ -114,6 +126,7 @@ export const FAQWrapper = styled.div`
     border: none;
     border-bottom: 2px solid var(--background-hover);
     font-family: var(--font-noto);
+    font-size: clamp(0.9rem, 0.82rem + 0.4vw, 1.05rem);
     cursor: pointer;
     outline: none;
   }
@@ -121,7 +134,7 @@ export const FAQWrapper = styled.div`
     max-height: 9999px;
     transition: all 0.6s ease-out;
     height: auto;
-    text-align: justify;
+    text-align: left;
   }
   .content.collapsed {
     max-height: 0;
@@ -130,8 +143,17 @@ export const FAQWrapper = styled.div`
   }
   p {
     padding: 1rem 0;
-    font-size: small;
+    font-size: clamp(0.8rem, 0.74rem + 0.3vw, 0.95rem);
     opacity: 0.7;
+  }
+  .content a {
+    color: var(--main-blue);
+    border-bottom: 1px solid var(--main-blue);
+    opacity: 1;
+  }
+  .content a:hover {
+    color: rgb(255 255 26 / 87%);
+    border-bottom: 1px solid rgb(255 255 26 / 87%);
   }
 
   /* icon style */

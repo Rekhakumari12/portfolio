@@ -12,7 +12,7 @@ type Props = {
   title: string;
   desc?: string;
   repoLink: { name: string; url: string };
-  liveLink: { name: string; url: string };
+  liveLink?: { name: string; url: string };
   langObj: string[];
   shadowColor: string;
 };
@@ -23,6 +23,7 @@ type DataProps = {
 
 export default function ProjectCard({ data }: DataProps) {
   const { title, desc, repoLink, liveLink, langObj, shadowColor } = data;
+  const hasLiveLink = Boolean(liveLink?.url) && liveLink?.url !== "#";
   return (
     <>
       <ProjectCardWrapper shadowColor={shadowColor}>
@@ -51,25 +52,27 @@ export default function ProjectCard({ data }: DataProps) {
               </a>
             </Button>
           </Tilt>
-          <Tilt
-            perspective={500}
-            glareEnable={true}
-            glareMaxOpacity={0.45}
-            scale={1.02}
-          >
-            <Button>
-              <Image
-                src="/earth.svg"
-                alt="earth icon"
-                width={20}
-                height={20}
-                priority
-              />
-              <a href={liveLink.url} className={style.href}>
-                {liveLink.name}
-              </a>
-            </Button>
-          </Tilt>
+          {hasLiveLink && liveLink && (
+            <Tilt
+              perspective={500}
+              glareEnable={true}
+              glareMaxOpacity={0.45}
+              scale={1.02}
+            >
+              <Button>
+                <Image
+                  src="/earth.svg"
+                  alt="earth icon"
+                  width={20}
+                  height={20}
+                  priority
+                />
+                <a href={liveLink.url} className={style.href}>
+                  {liveLink.name}
+                </a>
+              </Button>
+            </Tilt>
+          )}
         </div>
         <Divider my="1" />
         <div>

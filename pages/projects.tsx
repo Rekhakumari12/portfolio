@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import {
   Divider,
   MainWrapper,
@@ -6,34 +6,11 @@ import {
   Space,
 } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
-import Image from "next/image";
 import { projectData } from "../constants/projectdata";
-import { Options } from "../constants/lang";
 import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
+import Certifications from "../components/Certifications";
 export default function Projects() {
-  const inputRef = useRef<HTMLSelectElement>(null);
-  const [inputValue, setInputValue] = useState<string>("all");
-  const [filteredProject, setFilteredData] = useState(projectData);
-
-  useEffect(() => {
-    const filtered = projectData?.filter((project) =>
-      project && project.langObj.includes(inputValue) ? project : []
-    );
-
-    inputValue === "all"
-      ? setFilteredData(projectData)
-      : setFilteredData(filtered);
-  }, [inputValue]);
-
-  const handleChange = () => {
-    if (inputRef.current?.value) {
-      setInputValue(inputRef.current.value);
-    } else {
-      setInputValue("all");
-    }
-  };
-
   return (
     <MainWrapper>
       <Navbar />
@@ -45,40 +22,23 @@ export default function Projects() {
               <span key={letter + id.toString()}>{letter}</span>
             ))}
           </h1>
-          <div className={"searchbox"}>
-            <Image
-              src="/filter.svg"
-              alt="filter icon"
-              width={15}
-              height={15}
-              priority
-              className="search"
-            />
-            <select onChange={handleChange} ref={inputRef} id="input">
-              <option value="all" defaultValue={"all"}>
-                All Projects
-              </option>
-              {Options.map((option) => (
-                <option value={option} key={option}>
-                  {option.charAt(0).toUpperCase() + option.slice(1)}
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
 
         <Space my="1">
-          <p className={`${style.fontNato} ${style.fontHalfRem}`}>
+          <p className={`${style.fontNato} ${style.fontSize}`}>
             Here&apos;s a small selection of some of my recent projects and
             experiences.
           </p>
           <Divider my="3" />
-          {filteredProject.length
-            ? filteredProject?.map((data, i) => (
+          {projectData.length
+            ? projectData?.map((data, i) => (
                 <ProjectCard data={data} key={i} />
               ))
             : "Needs to be added"}
         </Space>
+
+        <Divider my="3" />
+        <Certifications />
       </SectionWrapper>
     </MainWrapper>
   );

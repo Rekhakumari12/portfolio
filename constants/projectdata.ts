@@ -1,4 +1,4 @@
-import { Project2, TrelloClone } from "./lang";
+import { Project2, TrelloClone, Sketchboard, AiTaskManagement } from "./lang";
 
 export const projectData1 = [
   {
@@ -45,9 +45,40 @@ type Type = {
   title: string;
   desc: string;
   repoLink: { name: string; url: string };
-  liveLink: { name: string; url: string };
+  liveLink?: { name: string; url: string };
   langObj: string[];
   shadowColor: string;
 }[];
 
-export const projectData: Type = [];
+export const projectData: Type = [
+  {
+    title: "Collaborative Sketchboard",
+    desc: `💡 Real-time collaborative whiteboard enabling simultaneous multi-user drawing, powered by <a href='https://socket.io/' target='_blank'><u>Socket.io</u></a> and the HTML5 Canvas API.<br/><br/>
+    💡 Optimized canvas rendering with custom toolsets and JPEG export functionality.`,
+    repoLink: {
+      name: "GitHub",
+      url: "https://github.com/Rekhakumari12/sketchbook-fe",
+    },
+    liveLink: {
+      name: "Demo",
+      url: "https://sketchbook-fe-pi.vercel.app/",
+    },
+    langObj: Sketchboard,
+    shadowColor: "var(--main-green)",
+  },
+  {
+    title: "AI Task Management",
+    desc: `💡 AI-powered task manager that leverages the <a href='https://ai.google.dev/' target='_blank'><u>Google Gemini API</u></a> to automate user story generation, reducing planning time.<br/><br/>
+    💡 Features a rich-text editor with live preview capabilities, deployed on Netlify Functions.`,
+    repoLink: {
+      name: "GitHub",
+      url: "https://github.com/Rekhakumari12/trello-clone",
+    },
+    liveLink: {
+      name: "Demo",
+      url: "https://trello-clone-12.netlify.app/",
+    },
+    langObj: AiTaskManagement,
+    shadowColor: "var(--main-purple)",
+  },
+];
