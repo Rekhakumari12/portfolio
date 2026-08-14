@@ -5,6 +5,7 @@ import Image from "next/image";
 import { WORK_HISTORY } from "../constants/workHistory";
 import Navbar from "../components/Navbar";
 import WorkProgress from "../components/WorkProgress";
+import Skills from "../components/Skills";
 // @refresh reset
 export default function about() {
   return (
@@ -30,22 +31,28 @@ export default function about() {
                 title="Namaste"
               />{" "} */}
               <br />
-              My name is Rekha Kumari, a Frontend Engineer from Punjab, India
-              with 2 years of experience in designing and developing visually
-              pleasing and user-friendly websites and web applications.
+              My name is Rekha Kumari, a Frontend Engineer from India
+              with 4.5 years of experience designing and building web
+              applications that are fast, accessible, and a genuine pleasure to
+              use.
             </p>
             <p>
-              I hold a Bachelor&apos;s degree in Computer Applications. My
-              skillset includes proficiency in HTML, CSS, JavaScript and
-              frameworks such as React, as well as experience in responsive
-              design, cross-browser compatibility and accessibility guidelines.
+              I hold a Bachelor&apos;s degree in Computer Science, and over
+              the years I&apos;ve grown from writing my first lines of HTML and
+              CSS into engineering thoughtful, scalable interfaces. These days my
+              core toolkit is React and Next.js with TypeScript, built on a solid
+              foundation of JavaScript, HTML and CSS. I care deeply about the
+              details users feel but rarely notice &mdash; responsive layouts,
+              cross-browser consistency, web performance and accessibility.
             </p>
             <p>
-              I am passionate about creating visually appealing, intuitive and
-              accessible digital experiences that meet the needs of both the
-              business and the end user. I am always looking to stay up-to-date
-              with the latest industry trends and best practices and am excited
-              to connect and collaborate with other professionals in the field.
+              What excites me most is turning complex problems into experiences
+              that feel simple and effortless. Beyond shipping features, I love
+              raising the bar on quality &mdash; clean, well-tested code and the
+              kind of engineering standards that make a whole team faster.
+              I&apos;m always learning, keeping up with where the web is headed,
+              and I enjoy collaborating with other people who care about building
+              great products.
             </p>
             <p>
               In my free time, I love to hit the trails for some trekking and
@@ -68,8 +75,38 @@ export default function about() {
             </p>
           </div>
           <hr className={style.divider} />
+          <h2 className={style.font2rem}>Skills</h2>
+          <Skills />
+          <hr className={style.divider} />
           <h2 className={style.font2rem}>Experience</h2>
           <section className={style.work}>
+            <div className={style.flex_item_center}>
+              <a href="https://www.technogise.com/" className={style.href}>
+                <Image
+                  src="/technogise.svg"
+                  alt="Technogise Logo"
+                  width={30}
+                  height={30}
+                  priority
+                  className={style.rounded}
+                />
+              </a>
+              <div className={style.fullWidth}>
+                <a href="https://www.technogise.com/" className={style.href}>
+                  <h4>Technogise</h4>
+                </a>
+                <ul>
+                  <li className={style.flex_space_between}>
+                    <div className={style.bullet}></div>
+                    <span>Software Engineer</span>
+                    <p className={style.span}>Apr 2025 - Present</p>
+                    <p className={`${style.span} ${style.exp_location}`}>
+                      Client: The Economist Group &middot; Pune, India
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div className={style.flex_item_center}>
               <a href="https://www.simpplr.com/" className={style.href}>
                 <Image
@@ -88,11 +125,11 @@ export default function about() {
                 <ul>
                   <li className={style.flex_space_between}>
                     <div className={style.bullet}></div>
-                    <div>
-                      <span>Software Engineer </span>
-                      <p className={style.span}>Gurugram, Haryana, India</p>
-                    </div>
-                    <p className={style.span}>Dec 2023 - Present</p>
+                    <span>Software Engineer</span>
+                    <p className={style.span}>Nov 2022 - Nov 2024</p>
+                    <p className={`${style.span} ${style.exp_location}`}>
+                      Gurugram, Haryana, India
+                    </p>
                   </li>
                 </ul>
               </div>

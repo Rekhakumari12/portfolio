@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { CSSProperties } from "react";
 import { Button } from "../styles/Wrapper.style";
 import style from "../styles/style.module.css";
 
@@ -6,51 +6,45 @@ type props = {
   handleClick: Function;
   active: "skill" | "general" | "education";
 };
+
+const SkillsIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true">
+    <path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z" />
+  </svg>
+);
+
+const EducationIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true">
+    <path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z" />
+  </svg>
+);
+
+const KeyboardIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
+    <path d="M512 64H64C28.65 64 0 92.65 0 128v256c0 35.35 28.65 64 64 64h448c35.35 0 64-28.65 64-64V128C576 92.65 547.3 64 512 64zM528 384c0 8.822-7.178 16-16 16H64c-8.822 0-16-7.178-16-16V128c0-8.822 7.178-16 16-16h448c8.822 0 16 7.178 16 16V384zM140 152h-24c-6.656 0-12 5.344-12 12v24c0 6.656 5.344 12 12 12h24c6.656 0 12-5.344 12-12v-24C152 157.3 146.7 152 140 152zM196 200h24c6.656 0 12-5.344 12-12v-24c0-6.656-5.344-12-12-12h-24c-6.656 0-12 5.344-12 12v24C184 194.7 189.3 200 196 200zM276 200h24c6.656 0 12-5.344 12-12v-24c0-6.656-5.344-12-12-12h-24c-6.656 0-12 5.344-12 12v24C264 194.7 269.3 200 276 200zM356 200h24c6.656 0 12-5.344 12-12v-24c0-6.656-5.344-12-12-12h-24c-6.656 0-12 5.344-12 12v24C344 194.7 349.3 200 356 200zM460 152h-24c-6.656 0-12 5.344-12 12v24c0 6.656 5.344 12 12 12h24c6.656 0 12-5.344 12-12v-24C472 157.3 466.7 152 460 152zM140 232h-24c-6.656 0-12 5.344-12 12v24c0 6.656 5.344 12 12 12h24c6.656 0 12-5.344 12-12v-24C152 237.3 146.7 232 140 232zM196 280h24c6.656 0 12-5.344 12-12v-24c0-6.656-5.344-12-12-12h-24c-6.656 0-12 5.344-12 12v24C184 274.7 189.3 280 196 280zM276 280h24c6.656 0 12-5.344 12-12v-24c0-6.656-5.344-12-12-12h-24c-6.656 0-12 5.344-12 12v24C264 274.7 269.3 280 276 280zM356 280h24c6.656 0 12-5.344 12-12v-24c0-6.656-5.344-12-12-12h-24c-6.656 0-12 5.344-12 12v24C344 274.7 349.3 280 356 280zM460 232h-24c-6.656 0-12 5.344-12 12v24c0 6.656 5.344 12 12 12h24c6.656 0 12-5.344 12-12v-24C472 237.3 466.7 232 460 232zM400 320h-224C167.1 320 160 327.1 160 336V352c0 8.875 7.125 16 16 16h224c8.875 0 16-7.125 16-16v-16C416 327.1 408.9 320 400 320z" />
+  </svg>
+);
+
+const tabs = [
+  { key: "skill", label: "Skills", accent: "var(--main-purple)", Icon: SkillsIcon },
+  { key: "education", label: "Education", accent: "var(--main-orange)", Icon: EducationIcon },
+  { key: "general", label: "General", accent: "var(--main-blue)", Icon: KeyboardIcon },
+] as const;
+
 export default function FaqCategories({ handleClick, active }: props) {
   return (
-    <div className={style.flex_space_between}>
-      <Button
-        padding="2rem"
-        onClick={() => handleClick("skill")}
-        className={`smallcard ${active === "skill" && "active"}`}
-      >
-        <Image
-          src="/skills.svg"
-          alt="skills Logo"
-          width={50}
-          height={50}
-          priority
-        />
-        <p>Skills</p>
-      </Button>
-      <Button
-        padding="2rem"
-        onClick={() => handleClick("education")}
-        className={`smallcard ${active === "education" && "active"}`}
-      >
-        <Image
-          src="/education.svg"
-          alt="education Logo"
-          width={50}
-          height={50}
-          priority
-        />
-        <p>Education</p>
-      </Button>
-      <Button
-        padding="2rem"
-        onClick={() => handleClick("general")}
-        className={`smallcard ${active === "general" && "active"}`}
-      >
-        <Image
-          src="/keyboard.svg"
-          alt="keyboard Logo"
-          width={50}
-          height={50}
-          priority
-        />
-        <p>General</p>
-      </Button>
+    <div className={style.faqTabs}>
+      {tabs.map(({ key, label, accent, Icon }) => (
+        <Button
+          key={key}
+          onClick={() => handleClick(key)}
+          className={`smallcard ${active === key ? "active" : ""}`}
+          style={{ ["--tab-accent" as string]: accent } as CSSProperties}
+        >
+          <Icon />
+          <p>{label}</p>
+        </Button>
+      ))}
     </div>
   );
 }

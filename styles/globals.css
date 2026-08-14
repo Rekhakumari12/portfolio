@@ -4,14 +4,17 @@
 
 :root {
   /* --max-width: 1100px; */
-  /* --border-radius: 12px; */
+  /* Rounded design-system radius scale */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   --font-noto: 'Noto Sans Mono', monospace;
   --font-lato: 'Lato', sans-serif;
   --font-handjet: 'Handjet', cursive;
   --foreground-rgb: 0, 0, 0;
-  --font-color: #aaaaaa;
+  --font-color: #c6c6d4;
   --background-hover: #2e2e2e;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -69,13 +72,110 @@ body {
 
 body {
   color: var(--font-color);
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background-color: #05010d;
   font-family: var(--font-noto);
+  /* Stylish arrow cursor: all white with softly rounded corners. */
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 3 L4 22 L9.2 16.8 L12.6 24 L16 22.4 L12.6 15.4 L19 15.4 Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E") 4 3, auto;
+}
+
+/* Clickable elements keep the same white rounded arrow. */
+a,
+button,
+label,
+select,
+summary,
+[role='button'],
+[onclick] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M4 3 L4 22 L9.2 16.8 L12.6 24 L16 22.4 L12.6 15.4 L19 15.4 Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E") 4 3, pointer;
+}
+
+/* Galaxy background: a slowly drifting multi-color nebula behind a
+   twinkling, scrolling starfield. Both layers are fixed to the viewport
+   and sit behind all page content. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -20%;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 20% 25%, rgba(152, 117, 224, 0.15), transparent 55%),
+    radial-gradient(ellipse at 82% 18%, rgba(0, 164, 221, 0.12), transparent 50%),
+    radial-gradient(ellipse at 68% 82%, rgba(255, 127, 79, 0.08), transparent 55%),
+    radial-gradient(ellipse at 30% 78%, rgba(83, 251, 221, 0.08), transparent 55%),
+    #05010d;
+  animation: nebula-drift 34s ease-in-out infinite alternate;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #ffffff, transparent),
+    radial-gradient(1px 1px at 27% 62%, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 41% 33%, #dcd3ff, transparent),
+    radial-gradient(1px 1px at 55% 78%, #ffffff, transparent),
+    radial-gradient(2px 2px at 68% 12%, #c9f7ff, transparent),
+    radial-gradient(1px 1px at 73% 48%, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 84% 71%, #ffe4d6, transparent),
+    radial-gradient(1px 1px at 91% 27%, #ffffff, transparent),
+    radial-gradient(1px 1px at 8% 88%, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 48% 6%, #ffffff, transparent),
+    radial-gradient(1px 1px at 62% 92%, #d7fff7, transparent),
+    radial-gradient(1px 1px at 35% 45%, #ffffff, transparent);
+  background-repeat: repeat;
+  background-size: 500px 500px;
+  animation: stars-drift 140s linear infinite, twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-drift {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.18) translate(-2%, -1.5%);
+  }
+}
+
+@keyframes stars-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -1000px;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.appLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.appLayout > main {
+  flex: 1 0 auto;
 }
 
 @media (prefers-color-scheme: dark) {

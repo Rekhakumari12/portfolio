@@ -18,7 +18,9 @@ export default function Accordion({ title, children, links }: props) {
         <p>{children}</p>
         {links?.map((l) => (
           <p key={l.name}>
-            <a href={l.name}>{l.name}</a>
+            <a href={l.url} target="_blank" rel="noopener noreferrer">
+              {l.name}
+            </a>
           </p>
         ))}
       </div>

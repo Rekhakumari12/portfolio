@@ -13,7 +13,7 @@ export const WORK_HISTORY: Props[] = [
   },
   {
     role: "Associate Frontend Engineer",
-    tenure: "Jul 2021 - Apr 2022",
+    tenure: "Jul 2021 - Mar 2022",
     location: "Pune, Maharashtra, India",
     id: 2,
   },

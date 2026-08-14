@@ -39,18 +39,17 @@ export default function Home() {
         </h1>
         <div className={style.intro}>
           <p>
-            I&apos;m Rekha Kumari, Frontend Engineer living in Punjab, India. I graduated with Computer Application in 2020, currently working with
-            awesome folks at{' '}
-            <a href="https://www.simpplr.com/" className={style.underline}>
-              Simpplr
-            </a>
+            I&apos;m Rekha Kumari, a Frontend Engineer based in India. Since graduating in
+            Computer Science in 2020, I&apos;ve been building fast, accessible web experiences
+            that feel effortless to use.
           </p>
           <p>
-            Check out my expertise or just add me as a connection on{' '}
+            I love turning complex ideas into simple, intuitive interfaces. If that sounds like your
+            kind of thing, let&apos;s connect on{' '}
             <a href="https://www.linkedin.com/in/rekhakumari12/" className={style.underline}>
               LinkedIn
             </a>{' '}
-            Working with individuals that enjoy similar things excites me.
+            &mdash; collaborating with people who care about great products is what excites me most.
           </p>
           {/* <p>
             Aside from them, I&apos;m an inquisitive person. I like discovering
@@ -82,47 +81,6 @@ export default function Home() {
             </a>
           </li>
         </ul>
-        <hr className={style.divider} />
-        <section className={style.featured_projects}>
-          <h2>Featured projects</h2>
-          <div className={style.featured_projects_tiles}>
-            <p>A collection of some side projects that have shipped recently.</p>
-            {/* <a href="#" className={style.tile}>
-              <div>
-                <Image
-                  src="/wordfile.svg"
-                  alt="wordfile Logo"
-                  width={50}
-                  height={50}
-                  priority
-                />
-              </div>
-              <p>
-                A curated library of screenshots & interaction patterns from the
-                world&apos;s best digital products. Gain insights, explore
-                trends and understand competitors and best practices.
-              </p>
-            </a>
-            <a href="#" className={style.tile}>
-              <div>
-                <Image
-                  src="/store.svg"
-                  alt="store Logo"
-                  width={50}
-                  height={50}
-                  priority
-                />
-              </div>
-              <p>
-                A curated library of screenshots & interaction patterns from the
-                world&apos;s best digital products. Gain insights, explore
-                trends and understand competitors and best practices.
-              </p>
-            </a> */}
-            <br />
-            <p> Coming soon!</p>
-          </div>
-        </section>
       </SectionWrapper>
     </MainWrapper>
   )

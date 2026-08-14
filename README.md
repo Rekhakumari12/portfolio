@@ -1,17 +1,33 @@
-## Getting Started
+# Portfolio
 
-First, run the development server:
+A personal portfolio website built with Next.js.
 
-```bash
-npm run dev
-# or
-yarn dev
+## Tech Stack
+
+- **Framework:** Next.js 15
+- **Language:** TypeScript
+- **UI:** React 19, Styled Components
+- **Utilities:** Lodash, React Parallax Tilt
+
+## Project Structure
+
+```
+├── pages/          # Next.js pages (home, about, projects, faq)
+├── components/     # Reusable UI components
+├── constants/      # Static data (work history, projects, FAQ, etc.)
+├── styles/         # Global styles and CSS modules
+└── public/         # Static assets (icons, images)
 ```
 
-## Deploy on Vercel
+## Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-New onw
+## Deployment
+
+Deploy on [Vercel](https://vercel.com) for the easiest Next.js hosting experience.
