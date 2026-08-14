@@ -1,0 +1,10 @@
+[build]
+  # Build with npm so Netlify honors package-lock.json + .npmrc (legacy-peer-deps)
+  # and resolves the exact, verified dependency tree. The dashboard previously
+  # ran `yarn build`, which — with no yarn.lock — hoisted stricter React types
+  # and broke the type-check. Keep the toolchain identical to local CI.
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--legacy-peer-deps"
