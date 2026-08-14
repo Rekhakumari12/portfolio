@@ -82,6 +82,7 @@
 .navitem {
   padding: 0.5rem 1.5rem;
   border: 1px solid transparent;
+  border-radius: var(--radius-md);
 }
 .navitem:hover {
   border: 1px solid var(--main-purple);
@@ -164,6 +165,7 @@
   padding: 0.5rem;
   display: flex;
   border: 2px solid transparent;
+  border-radius: var(--radius-md);
   /* Inner fill sits over a rotating conic-gradient so only the border shows it. */
   background: linear-gradient(var(--btn-fill), var(--btn-fill)) padding-box,
     conic-gradient(
@@ -205,6 +207,7 @@
   align-items: center;
   gap: 30px;
   border: 1px solid var(--background-hover);
+  border-radius: var(--radius-lg);
   padding: 2rem;
   margin-top: 20px;
   background: var(--btn-bg);
@@ -293,10 +296,20 @@
 }
 
 .lang {
-  background: var(--background-hover);
-  padding: 0.2rem 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
   font-size: clamp(0.72rem, 0.68rem + 0.2vw, 0.85rem);
-  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--font-color);
+  letter-spacing: 0.02em;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.lang:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 /* Skills */
@@ -328,6 +341,7 @@
   padding: 0.4rem 0.75rem;
   background: var(--btn-bg);
   border: 1px solid var(--background-hover);
+  border-radius: var(--radius-sm);
   color: rgb(255 255 255 / 87%);
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
@@ -340,6 +354,20 @@
 .projectInfo {
   font-family: var(--font-nato);
   font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.2rem);
+}
+.projectActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.langRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Certifications */
@@ -361,6 +389,7 @@
   padding: 1rem 1.25rem;
   background: var(--btn-bg);
   border: 1px solid transparent;
+  border-radius: var(--radius-md);
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }

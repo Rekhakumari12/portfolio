@@ -53,8 +53,7 @@ type Type = {
 export const projectData: Type = [
   {
     title: "Collaborative Sketchboard",
-    desc: `💡 Real-time collaborative whiteboard enabling simultaneous multi-user drawing, powered by <a href='https://socket.io/' target='_blank'><u>Socket.io</u></a> and the HTML5 Canvas API.<br/><br/>
-    💡 Optimized canvas rendering with custom toolsets and JPEG export functionality.`,
+    desc: `<ul><li>Real-time collaborative whiteboard enabling simultaneous multi-user drawing, powered by <a href='https://socket.io/' target='_blank'>Socket.io</a> and the HTML5 Canvas API.</li><li>Optimized canvas rendering with custom toolsets and JPEG export functionality.</li></ul>`,
     repoLink: {
       name: "GitHub",
       url: "https://github.com/Rekhakumari12/sketchbook-fe",
@@ -68,8 +67,7 @@ export const projectData: Type = [
   },
   {
     title: "AI Task Management",
-    desc: `💡 AI-powered task manager that leverages the <a href='https://ai.google.dev/' target='_blank'><u>Google Gemini API</u></a> to automate user story generation, reducing planning time.<br/><br/>
-    💡 Features a rich-text editor with live preview capabilities, deployed on Netlify Functions.`,
+    desc: `<ul><li>AI-powered task manager that leverages the <a href='https://ai.google.dev/' target='_blank'>Google Gemini API</a> to automate user story generation, reducing planning time.</li><li>Features a rich-text editor with live preview capabilities, deployed on Netlify Functions.</li></ul>`,
     repoLink: {
       name: "GitHub",
       url: "https://github.com/Rekhakumari12/trello-clone",
